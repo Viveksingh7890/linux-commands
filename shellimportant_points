@@ -1,0 +1,93 @@
+1.)while getopts t: opt
+do
+  case ${opt} in
+    t) echo "hello world ${OPTARG}";
+  esac
+
+done
+
+shift $((OPTIND -1))
+2.) [ -z ...]
+3.) ${0##*/} extract value till last / of input.
+4.) sed stream editor sed substitude 's/ / /g(global)
+5.) sed -n '3p' file name.
+6.) sed -n '/India/p'(print line)
+7.) sed -n -e '2p' -e '4p' data
+8.) sed -n '2,+2p' file (2 line after second line
+9.) sed -n '1~2p' file every secondline
+10.)sed -n -f filename filename2
+11.)sed -i for permanent save
+12.)sed '2 s/India/us/g' data (second line only)
+13.)sed '/poll/ s/India/us/' filename
+14.) d for delete
+15.) sed '/India/ w newfile to write ' filename1
+16.) sed '/India/ a new message' file name to append content in file
+17.) sed '2 e date' main file => for excuting date command
+18.) sed '2 i content' file name => for inserting content
+19.) sed '2 r file name1 ' main file => reading content of file
+20.) sed '2 c content' file name => change content
+21.) sed "$d" filename => delete last line
+22.) sed "/^$/d" filename=> delete empty line in file
+23.) sed "/India/ q" file name for first occurance only
+23.) sed "=" file name for printing each line with line numbers.
+Regex
+24.) sed "/^V/p" file name => prints line starting with v
+25.) sed "/[AC]/" FILE NAME => HAVING CHARETER SET STARTING with a or c.
+26.) sed "/[[:space:]]/p" file name.
+
+
+AWK
+1.)AWK "{print/Users/A200287292/Desktop/Canceled-\ DIF+Icarus\ Evening\ stand-up\ call..eml  $3,$4}" file name
+2.)awk "{print $NF}" NUMBER OF FIELD => it shows last line.
+3.)awk "{print NR, $0}" => print line number of rows with all content
+
+for CSV data
+
+4.)awk -F, {PRINT $1} FILE NAME => F FOR Feild formating
+5.)awk '{(if $3<50000) print $0}' => condition checking
+6.)awk '/India/ {print $0}' file name => for seching line with india
+7.)awk '{(if $3 ==500000) {$3=80000} print $0}' file namew for chaning value
+8.) awk '{print NR $0}'FILE NAME
+9.) awk 'NR ==8,NR==10 {print $0}'print line 8 t0 10
+10.) awk 'NF=0 {print $0}' print line with empty line
+11.) awk 'END {print NR}' print number of line
+12.)awk 'BEGIN{for(i=0;i<10;i++) print i;}'
+13.)awk 'BEGIN{while(i<10){i++; print i }}'
+'
+CUT 
+1.) cut -c1,5 file name => cut first charater of every line.
+2.) cut -c1-5 file name => cut 1 to 5 numbers
+3.) cut -d, -f 2 file name
+4.) cut -d, -f 1- file name --output-delimiter=":" => change delimiter by ;
+
+
+
+
+
+
+
+
+
+Hackerrank
+1.)(echo "scale:4; expression " | bc).
+2.) sort -t$'\t' -k 2nr =>tab spacing.
+3.) sort -k2n
+4.) The second expression (total=$(( $total/3 ))) attempts to perform variable substitution before the division,
+  resulting in an arithmetic expression (12/3) being treated as a string rather than being evaluated.
+  If you want to perform the division using the current value of total,
+  use the first expression.
+5.) paste -s -d "\n" file.txt
+6.) Output Matching Lines: When grep finds lines in a file that match the specified pattern,
+    it outputs those lines to the terminal or to a specified file. By default,
+    it prints the entire line that contains the match.
+7.) GREP -W -i seaches whole iword.
+
+8.) -v use to ivert match.
+9.) grep '\([0-9]\)\s*\1' => 1234 5678 9101 1234
+10.) sed -e for first occurance if element.
+11.) sed 's/thy/{&}/Ig' => {&} replacement.
+12.) sed -E 's/[0-9]{4} /**** /g' -E for regex
+
+13.)${_%.*} 
+${_}: This refers to the value of the variable named _. The underscore variable in Bash typically holds the last argument to the last command.
+_%.*: This is the suffix removal pattern. It removes the shortest suffix that matches .* from the value of _.
