@@ -91,3 +91,20 @@ Hackerrank
 13.)${_%.*} 
 ${_}: This refers to the value of the variable named _. The underscore variable in Bash typically holds the last argument to the last command.
 _%.*: This is the suffix removal pattern. It removes the shortest suffix that matches .* from the value of _.
+
+14.) ${variable##*/} removes the longest match of */ (everything up to the last /) from the beginning of the value of variable. This effectively gives you the filename part of a path.
+      eg:- path="/path/to/some/file.txt"
+      echo "${path##*/}"  # This will output: file.txt
+15.) ${variable##/*} removes the longest match of /* (everything up to the first /) from the beginning of the value of variable. This effectively gives you the directory part of a path.
+      eg:- echo "${path##/*}"  # This will output: path/to/some/file.txt
+16.) ${variable#*/} removes the shortest match of */ (everything up to the first /) from the beginning of the value of variable.
+      eg:- path="/path/to/some/file.txt"
+           echo "${path#*/}"  # This will output: path/to/some/file.txt
+17.) ${variable#/*} removes the shortest match of /* (everything up to the first /) from the beginning of the value of variable.
+      eg:- echo "${path#/*}"  # This will output: to/some/file.txt
+18.) ${variable%/*} removes the shortest match of /* (everything after the last /) from the end of the value of variable.
+      eg:- path="/path/to/some/file.txt"
+          echo "${path%/*}"  # This will output: /path/to/some
+19.) ${variable%*/} removes the shortest match of */ (everything after the first /) from the end of the value of variable.
+      eg:- echo "${path%/}"   # This will output: /path/to/some/file.txt
+
